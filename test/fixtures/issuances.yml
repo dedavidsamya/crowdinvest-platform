@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  date: 2021-09-21 21:48:54
+  volume: 9.99
+
+two:
+  name: MyString
+  date: 2021-09-21 21:48:54
+  volume: 9.99

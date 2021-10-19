@@ -1,0 +1,18 @@
+<br><br><br><br><br>
+
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <%= simple_form_for @investment do |f| %>
+      <%= f.input :amount_of_money %>
+      <%= f.input :issuance_id do %>
+        <%= f.select :issuance_id, Issuance.all.map { |i| [i.name, i.id,] }, include_blank: true %>
+        <% end %>
+      <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Home", root_path, class: 'btn-main-small' %>
+  <br><br>
+<%= link_to "Investments list", investments_path, class: 'btn-main-small' %>
+</div>

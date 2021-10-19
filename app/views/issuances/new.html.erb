@@ -1,0 +1,19 @@
+<br><br><br><br><br>
+<h1>Create new issuance here:</h1>
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <%= simple_form_for @issuance do |f| %>
+        <%= f.input :name %></p>
+        <%= f.input :date, as: :date %>
+        <%= f.input :volume %>
+        <%= f.button :submit %>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Home", root_path, class: 'btn-main-small' %>
+  <br><br>
+  <%= link_to "Investments list", investments_path, class: 'btn-main-small' %>
+  <br><br>
+  <%= link_to "Issuances list", issuances_path, class: 'btn-main-small' %>
+</div>

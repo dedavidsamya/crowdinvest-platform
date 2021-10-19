@@ -1,0 +1,27 @@
+<!--Build a page that contains a list of all investments with the following data:
+
+amount of money invested
+issuance name
+
+Investments should be CRUD-able with respective validation rules in place. -->
+<h1>Investments list</h1>
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <% @investments.each do |investment| %>
+      <p>Issuance Name: <%= investment.issuance.name %> </p>
+      <p>Amount of Money: <%= investment.amount_of_money %> </p>
+      <%= link_to 'View', investment_path(investment), class: 'btn-main-small' %>
+      <%= link_to 'Edit', edit_investment_path(investment), class: 'btn-main-small' %>
+      <%= link_to 'Destroy',  { action: :destroy, id: investment.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-main-small' %>
+      <h3>--------</h3>
+      <% end %>
+    </div>
+  </div>
+<%= link_to "Home", root_path, class: 'btn-main-small' %>
+<br><br>
+<%= link_to "Issuances list", issuances_path, class: 'btn-main-small' %>
+<br><br>
+<%= link_to "Make new investment!", new_investment_path(@investment), class: 'btn-main-small' %>
+</div>
+

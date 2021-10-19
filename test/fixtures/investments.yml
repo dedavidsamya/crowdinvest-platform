@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  amount_of_money: 9.99
+  issuance: one
+
+two:
+  amount_of_money: 9.99
+  issuance: two

@@ -1,0 +1,26 @@
+
+<h1>Issuances list</h1>
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <% @issuances.each do |issuance| %>
+      <p>Name: <%= issuance.name %></p>
+      <p>Volume: <%= issuance.volume %></p>
+      <p>Available from: <%= issuance.date %></p>
+      <p>Currently investable? <%= issuance.investable? %></p>
+      <p>Number of investments received: <%= issuance.investments.count %></p>
+      <% summary_investments = issuance.investments.all.map { |i| [i.amount_of_money.to_f,] } %>
+      <p> Summary of investments: <%= summary_investments.each.with_index(1) {|invest, index| puts "#{index}. #{invest}" } %> </p>
+      <p> Percentage of volume reached: <%= issuance.total_investments/issuance.volume * 100 %> % </p>
+      <%= link_to 'View', issuance_path(issuance), class: 'btn-main-small' %>
+      <%= link_to'Edit', edit_issuance_path(issuance), class: 'btn-main-small' %>
+      <%= link_to 'Destroy',  { action: :destroy, id: issuance.id }, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn-main-small'%>
+      <h3>------------------</h3>
+      <% end %>
+    </div>
+  </div>
+  <%= link_to "Home", root_path, class: 'btn-main-small' %>
+  <br><br>
+  <%= link_to "Make an investment!", new_investment_path, class: 'btn-main-small' %>
+</div>
+

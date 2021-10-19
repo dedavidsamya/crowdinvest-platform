@@ -1,0 +1,14 @@
+
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <h3>Amount of Money: <%= @investment.amount_of_money %> </h3>
+      <h3>Issuance Name: <%= @investment.issuance.name %> </h3>
+    </div>
+  </div>
+  <%= link_to "Home", root_path, class: 'btn-main-small' %>
+  <br><br>
+  <%= link_to "Investments list", investments_path, class: 'btn-main-small' %>
+  <br><br>
+  <%= link_to "Issuances list", issuances_path, class: 'btn-main-small' %>
+</div>

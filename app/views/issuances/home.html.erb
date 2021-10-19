@@ -1,0 +1,21 @@
+<br><br><br>
+<h1>Welcome to our issuances and investments portal!</h1>
+<div class="container container-custom">
+  <div class="row row-custom">
+    <div class="col-6 centering form rounded-input mt-3 p-4 shadow mb-3">
+      <br>
+      <h3>Create an issuance:</h3>
+      <%= link_to "Create new issuance", new_issuance_path(@issuances), class: 'btn-main-small' %>
+      <br>
+      <br>
+      <h3>See all available issuances:</h3>
+      <%= link_to "Issuances", issuances_path(@issuances), class: 'btn-main-small' %>
+      <br>
+      <br>
+      <h3>Make an investment!</h3>
+      <%= link_to "Invest!", new_investment_path(@investment), class: 'btn-main-small' %>
+      <br>
+      <br>
+    </div>
+  </div>
+</div>
